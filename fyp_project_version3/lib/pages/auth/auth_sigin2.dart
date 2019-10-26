@@ -78,7 +78,7 @@ class _SignState extends State<Sign> {
                         "MRSM E-WALLET",
                         style: TextStyle(
                           fontFamily: "Poppins-Bold",
-                          fontSize: 25,
+                          fontSize: 20,
                           letterSpacing: .6,
                           fontWeight: FontWeight.bold,
                         ),
@@ -164,7 +164,7 @@ class _SignState extends State<Sign> {
                                 form.save();
                                 print("$dataEmail, $dataPassword");
                                 String url =
-                                    "http://10.0.2.2/fyp_project_api_version_1.0/api/student/studentsignin.php?" +
+                                    "http://192.168.1.151/fyp_project_api_version_1.0/api/student/studentsignin.php?" +
                                         "email=" +
                                         dataEmail +
                                         "&password=" +

@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   //Show balance in account
   Future<dynamic> showCurrent() async {
-    String url ="http://10.0.2.2/fyp_project_api_version_1.0/api/wallet/walletshow.php?userid=" + userid;
+    String url ="http://192.168.1.151/fyp_project_api_version_1.0/api/wallet/walletshow.php?userid=" + userid;
     final response = await HTTP.get(url);
     final data = json.decode(response.body);
     dataCurrent == "" ? dataCurrent = data["wallet"] : dataCurrent = dataCurrent;
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   serviceScan() async {
     final scan = await FlutterBarcodeScanner.scanBarcode("#004297", "CANCEL", false, ScanMode.QR);
 
-    String url = "http://10.0.2.2/fyp_project_api_version_1.0/api?" + userid + scan;
+    String url = "http://192.168.1.151/fyp_project_api_version_1.0/api?" + userid + scan;
 
     final response = await HTTP.post(url);
 
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
    servicePurchase() async {
      serviceScan();
 
-    String url = "http:://10.0.2.2/fyp_project_api_version_1.0/api/wallet/walletshow.php?userid=" + userid + "&" + qrcode;
+    String url = "http://192.168.1.151/fyp_project_api_version_1.0/api/wallet/walletshow.php?userid=" + userid + "&" + qrcode;
 
      final response = await HTTP.get(url);
      final data = json.decode(response.body);
@@ -192,9 +192,8 @@ class _HomePageState extends State<HomePage> {
                               mainAxisSize: MainAxisSize.max,
                               children: <Widget>[
                                 InkWell(
-                                  onTap: () {
-                                    Navigator.pushNamed(context, routeGotoScanQR);
-                                  },
+                                  onTap: servicePurchase, 
+                                    //Navigator.pushNamed(context, routeGotoScanQR);
                                   child: Text("Scan to Pay",
                                   textAlign: TextAlign.center, style: TextStyle(
                                     fontFamily: "Poppins-Bold",
