@@ -134,7 +134,7 @@ passwordShowHide() {
                                 if (form.validate()) {
                                   form.save();
                                   print("$dataEmail, $dataPassword");
-                                  String url = "http://192.168.1.151/fyp_project_api_version_1.0/api/student/studentsignup.php?" +
+                                  String url = "http://10.59.39.107/fyp_project_api_version_1.0/api/student/studentsignup.php?" +
                                   "email=" +
                                   dataEmail +
                                   "&password=" +

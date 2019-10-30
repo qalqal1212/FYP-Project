@@ -28,7 +28,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
 
   //future >>> show current balance 
   Future profileGet() async {
-    String url = "http://192.168.1.151/fyp_project_api_version_1.0/api/profile/profilesingle.php?userid=" + userid;
+    String url = "http://10.59.39.107/fyp_project_api_version_1.0/api/profile/profilesingle.php?userid=" + userid;
     final response = await HTTP.get(url);
     final data = json.decode(response.body);
 
@@ -242,7 +242,7 @@ class _UpdateProfilePageState extends State<UpdateProfilePage> {
                                   final form = formKey.currentState;
                                   if (form.validate()) {
                                     form.save();
-                                    String url = "http://192.168.1.151/fyp_project_api_version_1.0/api/profile/profileupdate.php?userid=" +
+                                    String url = "http://10.59.39.107/fyp_project_api_version_1.0/api/profile/profileupdate.php?userid=" +
                                     userid +
                                     "&email=" +
                                     holdEmail +

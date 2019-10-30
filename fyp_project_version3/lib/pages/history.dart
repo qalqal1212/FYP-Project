@@ -18,7 +18,7 @@ class _HistoryPageState extends State<HistoryPage> {
 
   //Future History Purchase 
   Future<List<HistoryPurchase>> serviceHistoryPurchase() async {
-    String url = "http://192.168.1.151/fyp_project_api_version_1.0/api/history/historypurchase.php?userid=" + userid;
+    String url = "http://10.59.39.107/fyp_project_api_version_1.0/api/history/historypurchase.php?userid=" + userid;
     final response = await HTTP.get(url);
     final data = json.decode(response.body);
 
